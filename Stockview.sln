@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stockprice", "Stockprice\Stockprice.csproj", "{0FC95B57-97DA-43DC-A437-AB128721DB87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stockview", "Stockview\Stockview.csproj", "{0FC95B57-97DA-43DC-A437-AB128721DB87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

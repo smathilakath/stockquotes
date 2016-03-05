@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stockprice
 {
-    class Stockprice
+    class Tickerview
     {
         public string Symbol { get; set; }
         public string Last { get; set; }
@@ -18,6 +18,6 @@ namespace Stockprice
         public string Volume { get; set; }
         public string  Bid { get; set; }
         public string Ask { get; set; }
-        public List<Stockprice> StockPriceList { get; set; }
+        public List<Tickerview> StockPriceList { get; set; }
     }
 }

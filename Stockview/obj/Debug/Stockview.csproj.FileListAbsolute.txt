@@ -1,0 +1,17 @@
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\bin\Debug\Stockprice.exe.config
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\bin\Debug\Stockprice.exe
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\bin\Debug\Stockprice.pdb
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\obj\Debug\Stockprice.Stockview.resources
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\obj\Debug\Stockprice.Properties.Resources.resources
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\obj\Debug\Stockview.csproj.GenerateResource.Cache
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\obj\Debug\Stockprice.exe
+C:\Users\smadhavan\Source\Repos\Stockprice\Stockprice\Stockprice\obj\Debug\Stockprice.pdb
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\bin\Debug\Stockprice.exe.config
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\obj\Debug\Stockprice.exe
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\obj\Debug\Stockprice.pdb
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\bin\Debug\Stockprice.exe
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\bin\Debug\Stockprice.pdb
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\obj\Debug\Stockview.csprojResolveAssemblyReference.cache
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\obj\Debug\Stockprice.Stockview.resources
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\obj\Debug\Stockprice.Properties.Resources.resources
+C:\Users\smadhavan\Source\Repos\stockview\Stockview\obj\Debug\Stockview.csproj.GenerateResource.Cache
