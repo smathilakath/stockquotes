@@ -18,6 +18,5 @@ namespace Stockprice
         public string Volume { get; set; }
         public string  Bid { get; set; }
         public string Ask { get; set; }
-        public List<Tickerview> StockPriceList { get; set; }
     }
 }

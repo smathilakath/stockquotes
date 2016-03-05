@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.stockviewgrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.stockviewgrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // stockviewgrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-2, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1043, 263);
-            this.dataGridView1.TabIndex = 0;
+            this.stockviewgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stockviewgrid.Location = new System.Drawing.Point(-2, 0);
+            this.stockviewgrid.Name = "stockviewgrid";
+            this.stockviewgrid.Size = new System.Drawing.Size(1043, 263);
+            this.stockviewgrid.TabIndex = 0;
             // 
-            // Form1
+            // Stockview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 262);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.stockviewgrid);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Stockview";
             this.Text = "Stock View";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockviewgrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView stockviewgrid;
     }
 }
 

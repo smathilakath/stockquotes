@@ -11,14 +11,18 @@ namespace Stockprice
 {
     public partial class Stockview : Form
     {
-        
+        private int tickDelay;
         public Stockview()
         {
+            tickDelay = int.Parse(System.Configuration.ConfigurationSettings.AppSettings["tick"]);
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            TestLoad();
+            //TestLoad();
+            stockviewgrid.DataSource = GetQuote();
+            ChangeColour();
+
         }
         private void TestLoad()
         {
@@ -27,8 +31,8 @@ namespace Stockprice
 
         private void UpdateDataGrid()
         {
-            dataGridView1.DataSource = GetQuote("YHOO");
-            RowColour();
+            stockviewgrid.DataSource = GetQuote();
+            ChangeColour();
         }
         private void StartStockMonitoring()
         {
@@ -41,62 +45,70 @@ namespace Stockprice
                         UpdateDataGrid();
                     }));
 
-                    await Task.Delay(5000);
+                    await Task.Delay(tickDelay);
                 }
             }, TaskCreationOptions.LongRunning);
         }
-        private void RowColour()
+        private void ChangeColour()
         {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < stockviewgrid.Rows.Count; i++)
             {
-                float change = float.Parse(dataGridView1.Rows[i].Cells["Change"].Value.ToString());
+                var strValue = stockviewgrid.Rows[i].Cells["Change"].Value.ToString();
+                strValue = strValue.Substring(0, strValue.LastIndexOf("("));
+                float change = float.Parse(strValue);
                 if (change < 0)// Or your condition 
                 {
-                    dataGridView1.Rows[i].Cells["Change"].Style.ForeColor = Color.Red;
+                    stockviewgrid.Rows[i].Cells["Change"].Style.ForeColor = Color.Red;
                 }
                 else
                 {
-                    dataGridView1.Rows[i].Cells["Change"].Style.ForeColor = Color.Green;
+                    stockviewgrid.Rows[i].Cells["Change"].Style.ForeColor = Color.Green;
                 }
             }
         }
 
-        private List<Tickerview> GetQuote(string symbol)
+        private List<Tickerview> GetQuote()
         {
-            Tickerview stockPrice = new Tickerview();
-            stockPrice.StockPriceList = new List<Tickerview>();
+            Tickerview tickerView = null;
+            List<Tickerview> tickerList =null;
             try
             {
+                
                 // Use Yahoo finance service to download stock data from Yahoo
+                string symbol = System.Configuration.ConfigurationSettings.AppSettings["symbols"];
                 string yahooURL = @"http://download.finance.yahoo.com/d/quotes.csv?s=" + symbol + "&f=sl1d1t1c1hgvbap2";
-                string[] symbols = symbol.Replace(",", " ").Split(' ');
-
                 // Initialize a new WebRequest.
                 HttpWebRequest webreq = (HttpWebRequest)WebRequest.Create(yahooURL);
                 // Get the response from the Internet resource.
                 HttpWebResponse webresp = (HttpWebResponse)webreq.GetResponse();
                 // Read the body of the response from the server.
-                StreamReader strm = new StreamReader(webresp.GetResponseStream(), Encoding.ASCII);
-                string content = strm.ReadLine().Replace("\"", "");
-                string[] contents = content.ToString().Split(',');
-                stockPrice.Symbol = contents[0];
-                stockPrice.Last = contents[1];
-                stockPrice.Date = contents[2];
-                stockPrice.Time = contents[3];
-                stockPrice.Change = contents[4];
-                stockPrice.High = contents[5];
-                stockPrice.Low = contents[6];
-                stockPrice.Volume = contents[7];
-                stockPrice.Bid = contents[8];
-                stockPrice.Ask = contents[9];
-                stockPrice.StockPriceList.Add(stockPrice);
-                strm.Close();
+                using (StreamReader streamReader = new StreamReader(webresp.GetResponseStream(), Encoding.ASCII))
+                {
+                    tickerList = new List<Tickerview>();
+                    while (!streamReader.EndOfStream)
+                    {
+                        tickerView = new Tickerview();
+                        string streamData = streamReader.ReadLine().Replace("\"", "");
+                        string[] tickDetails = streamData.ToString().Split(',');
+                        tickerView.Symbol = tickDetails[0];
+                        tickerView.Last = tickDetails[1];
+                        tickerView.Date = tickDetails[2];
+                        tickerView.Time = tickDetails[3];
+                        tickerView.Change = string.Format("{0}({1}%)", tickDetails[4], tickDetails[10]);
+                        tickerView.High = tickDetails[5];
+                        tickerView.Low = tickDetails[6];
+                        tickerView.Volume = tickDetails[7];
+                        tickerView.Bid = tickDetails[8];
+                        tickerView.Ask = tickDetails[9];
+                        tickerList.Add(tickerView);
+                    }
+                };
             }
             catch
             {
                 // Handle exceptions.
             }
-            return stockPrice.StockPriceList;
+            return tickerList;
         }
     }
 }
