@@ -67,10 +67,10 @@ namespace Stockprice
             }
         }
 
-        private List<Tickerview> GetQuote()
+        private List<Ticker> GetQuote()
         {
-            Tickerview tickerView = null;
-            List<Tickerview> tickerList =null;
+            Ticker tickerView = null;
+            List<Ticker> tickerList =null;
             try
             {
                 
@@ -84,10 +84,10 @@ namespace Stockprice
                 // Read the body of the response from the server.
                 using (StreamReader streamReader = new StreamReader(webresp.GetResponseStream(), Encoding.ASCII))
                 {
-                    tickerList = new List<Tickerview>();
+                    tickerList = new List<Ticker>();
                     while (!streamReader.EndOfStream)
                     {
-                        tickerView = new Tickerview();
+                        tickerView = new Ticker();
                         string streamData = streamReader.ReadLine().Replace("\"", "");
                         string[] tickDetails = streamData.ToString().Split(',');
                         tickerView.Symbol = tickDetails[0];

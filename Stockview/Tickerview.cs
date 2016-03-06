@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stockprice
 {
-    class Tickerview
+    class Ticker
     {
         public string Symbol { get; set; }
         public string Last { get; set; }
