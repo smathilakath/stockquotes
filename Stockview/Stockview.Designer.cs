@@ -1,4 +1,4 @@
-﻿namespace Stockprice
+﻿namespace Stockview
 {
     partial class Stockview
     {
@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stockview));
             this.stockviewgrid = new System.Windows.Forms.DataGridView();
+            this.stockviewnotify = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.stockviewgrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,16 +43,26 @@
             this.stockviewgrid.Size = new System.Drawing.Size(1043, 263);
             this.stockviewgrid.TabIndex = 0;
             // 
+            // stockviewnotify
+            // 
+            this.stockviewnotify.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.stockviewnotify.Icon = ((System.Drawing.Icon)(resources.GetObject("stockviewnotify.Icon")));
+            this.stockviewnotify.Text = "stockviewer";
+            this.stockviewnotify.Visible = true;
+            this.stockviewnotify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.stockviewnotify_MouseDoubleClick);
+            // 
             // Stockview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 262);
             this.Controls.Add(this.stockviewgrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Stockview";
             this.Text = "Stock View";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Stockview_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.stockviewgrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -58,6 +71,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView stockviewgrid;
+        private System.Windows.Forms.NotifyIcon stockviewnotify;
     }
 }
 

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stockprice
+namespace Stockview
 {
     public partial class Stockview : Form
     {
@@ -15,8 +15,17 @@ namespace Stockprice
             InitializeComponent();
             stockviewfacade = new Stockviewfacade();
         }
+
+        private void NotifyStock()
+        {
+            stockviewnotify.BalloonTipIcon = ToolTipIcon.Info;
+            stockviewnotify.BalloonTipText = "Relax, I am monitoring your stocks";
+            stockviewnotify.BalloonTipTitle = "Hit me, To know the status";
+            stockviewnotify.Text = "Monitoring Stocks";
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            NotifyStock();
             StartStockMonitoring();
         }
         private void UpdateDataGridAsync()
@@ -54,6 +63,29 @@ namespace Stockprice
                     stockviewgrid.Rows[i].Cells["Change"].Style.ForeColor = Color.Green;
                 }
             }
+        }
+
+        private void Stockview_Resize(object sender, EventArgs e)
+        {
+            if (FormWindowState.Minimized == this.WindowState)
+            {
+                stockviewnotify.Visible = true;
+                stockviewnotify.ShowBalloonTip(500);
+                this.Hide();
+            }
+
+            else if (FormWindowState.Normal == this.WindowState)
+            {
+                stockviewnotify.Visible = false;
+                this.Show();
+            }
+        }
+
+        private void stockviewnotify_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            stockviewnotify.ShowBalloonTip(1000);
+            WindowState = FormWindowState.Normal;
         }
     }
 }

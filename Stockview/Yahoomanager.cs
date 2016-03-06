@@ -6,14 +6,13 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stockprice
+namespace Stockview
 {
     class Yahoomanager : IQuote
     {
         private HttpWebRequest httpWebRequest = null;
         private HttpWebResponse httpWebResponse = null;
         private string serviceUrl = string.Empty;
-        private int tick = 0;
         public void Setup()
         {
             httpWebRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
