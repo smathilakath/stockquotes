@@ -71,6 +71,7 @@ Once the sample app code is on your computer, you can do the following steps to 
 ## Screen Shot 
 ![Alt text](images/stock.png "Screen Shot")
 
+![Alt text](images/notify.jpg "Notification")
 
 ## Feedback
 
