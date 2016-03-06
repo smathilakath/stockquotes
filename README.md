@@ -40,16 +40,16 @@ In order to successfully run this sample app you need a few things:
 
 ## Assumptions
 
-1. The request from server is pull.
-2. There is no timeout of the service.If required it will handled in subsequent versions.
-3. The data is not simulated but the historical data from source api.
-4. Accuracy of data cannot be validated.
-5. Design used is a facade pattern to extend the subset of managers in future implementations.
+* The request from server is pull.
+* There is no timeout of the service.If required it will be handled in subsequent versions.
+* The data is not simulated but the historical data from source api.
+* Accuracy of data cannot be validated.
+* Design used is a facade pattern to extend the subset of managers in future implementations.
 
 ## Known Issue.
 
-1. Timeout of the service is not handled
-2. Async of quotes by dividing update grid and update quote async on joining thread will be handled in v2
+* Timeout of the service is not handled
+* Async of quotes by dividing update grid and update quote async on joining thread will be handled in v2
 
 
 ## Running the code
