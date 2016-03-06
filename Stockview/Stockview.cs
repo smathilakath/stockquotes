@@ -76,9 +76,10 @@ namespace Stockprice
                 
                 // Use Yahoo finance service to download stock data from Yahoo
                 string symbol = System.Configuration.ConfigurationSettings.AppSettings["symbols"];
-                string yahooURL = @"http://download.finance.yahoo.com/d/quotes.csv?s=" + symbol + "&f=sl1d1t1c1hgvbap2";
+                //string yahooURL = @"http://download.finance.yahoo.com/d/quotes.csv?s=" + symbol + "&f=sl1d1t1c1hgvbap2";
+                string yahooUrl = string.Format("http://download.finance.yahoo.com/d/quotes.csv?s={0}&f=sl1d1t1c1hgvbap2", symbol);
                 // Initialize a new WebRequest.
-                HttpWebRequest webreq = (HttpWebRequest)WebRequest.Create(yahooURL);
+                HttpWebRequest webreq = (HttpWebRequest)WebRequest.Create(yahooUrl);
                 // Get the response from the Internet resource.
                 HttpWebResponse webresp = (HttpWebResponse)webreq.GetResponse();
                 // Read the body of the response from the server.
