@@ -55,21 +55,21 @@ Once the sample app code is on your computer, you can do the following steps to 
 
 ## Project Structure
 
-![Alt text](images/project.jpg "Project Structure")
+![Alt text](images/project.JPG "Project Structure")
 
 
 ## Class Diagram
 
-![Alt text](images/class.jpg "Class Diagram")
+![Alt text](images/Class.JPG "Class Diagram")
 
 
 ## Dependency Diagram
 
-![Alt text](images/dependency.jpg "Dependency Diagram")
+![Alt text](images/dependency.png "Dependency Diagram")
 
 
 ## Screen Shot 
-![Alt text](images/stock.jpg "Screen Shot")
+![Alt text](images/stock.png "Screen Shot")
 
 
 ## Feedback
