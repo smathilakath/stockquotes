@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stockview
 {
-    class Stockviewfacade
+    public class Stockviewfacade
     {
         IQuote yahooQuotes = new Yahoomanager();
         public List<Ticker> GetYahooQuotes()

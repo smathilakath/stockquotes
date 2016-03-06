@@ -1,0 +1,9 @@
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\bin\Debug\Stockview.Test.dll
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\bin\Debug\Stockview.Test.pdb
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\bin\Debug\Stockview.exe
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\bin\Debug\Stockview.pdb
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\obj\Debug\Stockview.Test.csprojResolveAssemblyReference.cache
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\obj\Debug\Stockview.Test.dll
+C:\Users\smadhavan\Source\Repos\stockview\Stockview.Test\obj\Debug\Stockview.Test.pdb

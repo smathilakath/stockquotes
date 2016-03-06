@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Stockview
 {
-    class Yahoomanager : IQuote
+    public class Yahoomanager : IQuote
     {
         private HttpWebRequest httpWebRequest = null;
         private HttpWebResponse httpWebResponse = null;

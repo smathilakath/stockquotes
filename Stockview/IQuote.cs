@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stockview
 {
-    interface IQuote
+    public interface IQuote
     {
         void Setup();
         List<Ticker> GetQuote();
