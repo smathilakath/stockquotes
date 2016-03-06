@@ -1,7 +1,7 @@
-Stock View - Pro Tax group sample app 
+Stock View - Demo 
 =====================================
 
-<p>Welcome to the Pro Tax group sample App.</p>
+<p>Welcome to Stock View Demo.</p>
 <p>This sample app is meant to provide working examples of how to pull stock quotes using multithreading with good design:</p>
 
 
@@ -11,6 +11,7 @@ Stock View - Pro Tax group sample app
 * [Requirements](#requirements)
 * [First Use Instructions](#first-use-instructions)
 * [Configuration](#configuration)
+* [Assumptions](#assumptions)
 * [Known Issue](#known-issue)
 * [Running the code](#running-the-code)
 * [Project Structure](#project-structure)
@@ -37,11 +38,18 @@ In order to successfully run this sample app you need a few things:
 
 ![Alt text](images/config.jpg "Configurations")
 
+## Assumptions
+
+1. The request from server is pull.
+2. There is no timeout of the service.If required it will handled in subsequent versions.
+3. The data is not simulated but the historical data from source api.
+4. Accuracy of data cannot be validated.
+5. Design used is a facade pattern to extend the subset of managers in future implementations.
 
 ## Known Issue.
 
 1. Timeout of the service is not handled
-2. Async of quotes on thread level will be handled in v2
+2. Async of quotes by dividing update grid and update quote async on joining thread will be handled in v2
 
 
 ## Running the code
