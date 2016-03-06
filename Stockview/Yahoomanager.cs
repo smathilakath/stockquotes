@@ -63,18 +63,5 @@ namespace Stockprice
             get { return serviceUrl; }
             set { serviceUrl = value; }
         }
-
-        public int Tick
-        {
-            get
-            {
-                return tick;
-            }
-
-            set
-            {
-                tick = value;
-            }
-        }
     }
 }

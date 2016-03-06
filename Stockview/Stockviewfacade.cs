@@ -13,7 +13,6 @@ namespace Stockprice
         {
             string serviceUrl = System.Configuration.ConfigurationSettings.AppSettings["yahoo"];
             string symbol = System.Configuration.ConfigurationSettings.AppSettings["symbols"];
-            yahooQuotes.Tick = int.Parse(System.Configuration.ConfigurationSettings.AppSettings["symbols"].ToString());
             yahooQuotes.Serviceurl = string.Format(serviceUrl, symbol);
             yahooQuotes.Setup();
             return yahooQuotes.GetQuote();

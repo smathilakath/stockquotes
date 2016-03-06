@@ -16,10 +16,6 @@ namespace Stockprice
             get;
             set;
         }
-        int Tick
-        {
-            get;
-            set;
-        }
+       
     }
 }
