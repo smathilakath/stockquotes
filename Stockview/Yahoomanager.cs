@@ -8,15 +8,25 @@ using System.Threading.Tasks;
 
 namespace Stockview
 {
+    /// <summary>
+    /// Yahoomanager is a subset or subsytem of the facade
+    /// </summary>
     public class Yahoomanager : IQuote
     {
         private HttpWebRequest httpWebRequest = null;
         private HttpWebResponse httpWebResponse = null;
         private string serviceUrl = string.Empty;
+        /// <summary>
+        /// Setup the configurations
+        /// </summary>
         public void Setup()
         {
             httpWebRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
         }
+        /// <summary>
+        /// Fire the quote api
+        /// </summary>
+        /// <returns></returns>
         public List<Ticker> GetQuote()
         {
             Ticker tickerView = null;
@@ -56,7 +66,6 @@ namespace Stockview
         {
            //TODO: Need implementation.
         }
-        
         public string Serviceurl
         {
             get { return serviceUrl; }

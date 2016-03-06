@@ -9,13 +9,18 @@ namespace Stockview
     {
         private Stockviewfacade stockviewfacade = null;
         private int tickDelay;
+        /// <summary>
+        /// Stockview is a class which pull tickets based on config
+        /// </summary>
         public Stockview()
         {
             tickDelay = int.Parse(System.Configuration.ConfigurationSettings.AppSettings["tick"]);
             InitializeComponent();
             stockviewfacade = new Stockviewfacade();
         }
-
+        /// <summary>
+        /// Moves down to systemtray
+        /// </summary>
         private void NotifyStock()
         {
             stockviewnotify.BalloonTipIcon = ToolTipIcon.Info;
@@ -23,16 +28,27 @@ namespace Stockview
             stockviewnotify.BalloonTipTitle = "Hit me, To know the status";
             stockviewnotify.Text = "Monitoring Stocks";
         }
+        /// <summary>
+        /// Startmonitoring the stocks from background
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             NotifyStock();
             StartStockMonitoring();
         }
+        /// <summary>
+        /// Update the datagrid using async non blocking UI
+        /// </summary>
         private void UpdateDataGridAsync()
         {
             stockviewgrid.DataSource = stockviewfacade.GetYahooQuotes();
             ChangeColour();
         }
+        /// <summary>
+        /// Invoke the parallel function to update quote with delay
+        /// </summary>
         private void StartStockMonitoring()
         {
             Task stockMonitoringTask = Task.Factory.StartNew(async () =>
@@ -47,6 +63,9 @@ namespace Stockview
                 }
             }, TaskCreationOptions.LongRunning);
         }
+        /// <summary>
+        /// Change colour of the price change
+        /// </summary>
         private void ChangeColour()
         {
             for (int i = 0; i < stockviewgrid.Rows.Count; i++)
@@ -64,7 +83,11 @@ namespace Stockview
                 }
             }
         }
-
+        /// <summary>
+        /// resize the windows show the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Stockview_Resize(object sender, EventArgs e)
         {
             if (FormWindowState.Minimized == this.WindowState)
@@ -80,7 +103,11 @@ namespace Stockview
                 this.Show();
             }
         }
-
+        /// <summary>
+        /// Form back on double click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stockviewnotify_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();

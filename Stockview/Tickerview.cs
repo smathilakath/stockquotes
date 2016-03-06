@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Stockview
 {
+    /// <summary>
+    /// Datatransferable object for tickers.
+    /// </summary>
     public class Ticker
     {
         public string Symbol { get; set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Stockview
 {
+    /// <summary>
+    /// Iquote act as an interface to follow mandatory parameters
+    /// </summary>
     public interface IQuote
     {
         void Setup();
