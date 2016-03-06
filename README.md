@@ -35,7 +35,7 @@ In order to successfully run this sample app you need a few things:
 
 ## Configuration
 
-![Alt text](images/config.JPG "Configurations")
+![Alt text](images/config.jpg "Configurations")
 
 
 ## Known Issue.
